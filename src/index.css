@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Geist Sans";
+  src: url("/fonts/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/GeistMono-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Geist Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --text-hero: clamp(3rem, 6vw, 5rem);
+  --text-page-title: clamp(2.25rem, 4vw, 3.5rem);
+  --text-section-title: clamp(1.5rem, 2vw, 2.25rem);
+  --text-entry-title: clamp(1.125rem, 1.2vw, 1.5rem);
+  --text-body-lg: 1.125rem;
+  --text-body: 1.03rem;
+  --text-meta: 0.875rem;
+
+  --space-section: clamp(3rem, 7vw, 5.5rem);
+  --space-block: clamp(1.25rem, 2.8vw, 2rem);
+}
+
+:root {
+  line-height: 1.72;
+  --color-accent: 37 99 235;
+  --color-accent-soft: 219 234 254;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: rgb(55 65 81);
+  background: white;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+html.dark body {
+  color: rgb(209 213 219);
+  background: rgb(3 7 18);
+}
+
+@layer components {
+  .hero-title {
+    font-size: var(--text-hero);
+    font-weight: 730;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: rgb(17 24 39);
+    max-width: 12ch;
+  }
+
+  .page-title {
+    font-size: var(--text-page-title);
+    font-weight: 720;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: rgb(17 24 39);
+  }
+
+  .section-title {
+    font-size: var(--text-section-title);
+    font-weight: 600;
+    line-height: 1.25;
+    color: rgb(17 24 39);
+  }
+
+  .entry-title {
+    font-size: var(--text-entry-title);
+    font-weight: 580;
+    line-height: 1.35;
+    color: rgb(17 24 39);
+  }
+
+  .lead-text {
+    font-size: var(--text-body-lg);
+    line-height: 1.8;
+    color: rgb(75 85 99);
+    max-width: 65ch;
+  }
+
+  .meta-text {
+    font-size: var(--text-meta);
+    font-weight: 500;
+    color: rgb(107 114 128);
+  }
+
+  .eyebrow {
+    font-size: var(--text-meta);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgb(var(--color-accent));
+  }
+
+  .page-stack {
+    display: grid;
+    gap: var(--space-section);
+  }
+
+  .content-stack {
+    display: grid;
+    gap: var(--space-block);
+  }
+
+  .accent-text {
+    color: rgb(var(--color-accent));
+  }
+
+  .accent-pill {
+    border: 1px solid rgb(var(--color-accent-soft));
+    background: rgb(var(--color-accent-soft) / 0.35);
+    color: rgb(var(--color-accent));
+  }
+}
+
+html.dark .hero-title,
+html.dark .page-title,
+html.dark .section-title,
+html.dark .entry-title {
+  color: rgb(243 244 246);
+}
+
+html.dark .lead-text {
+  color: rgb(209 213 219);
+}
+
+html.dark .meta-text {
+  color: rgb(156 163 175);
+}
+
+html.dark .accent-text {
+  color: rgb(var(--color-accent));
+}
+
+html.dark .accent-pill {
+  border-color: rgb(var(--color-accent) / 0.35);
+  background: rgb(var(--color-accent) / 0.14);
+}
+
+html.dark .bg-white,
+html.dark .bg-white\/90 {
+  background-color: rgb(3 7 18);
+}
+
+html.dark .bg-gray-50 {
+  background-color: rgb(15 23 42);
+}
+
+html.dark .bg-gray-100 {
+  background-color: rgb(30 41 59);
+}
+
+html.dark .border-gray-200 {
+  border-color: rgb(55 65 81);
+}
+
+html.dark .border-gray-300 {
+  border-color: rgb(75 85 99);
+}
+
+html.dark .text-gray-900 {
+  color: rgb(243 244 246);
+}
+
+html.dark .text-gray-700 {
+  color: rgb(209 213 219);
+}
+
+html.dark .text-gray-600 {
+  color: rgb(156 163 175);
+}
+
+html.dark .text-gray-500 {
+  color: rgb(156 163 175);
+}
+
+html.dark .text-gray-400 {
+  color: rgb(107 114 128);
+}
+
+html.dark .hover\:bg-gray-50:hover {
+  background-color: rgb(15 23 42);
+}
+
+html.dark .hover\:border-gray-300:hover {
+  border-color: rgb(107 114 128);
+}
+
+html.dark .hover\:text-gray-900:hover {
+  color: rgb(243 244 246);
+}
