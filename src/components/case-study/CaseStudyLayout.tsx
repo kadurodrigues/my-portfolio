@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import PageContainer from '../layout/PageContainer'
 
 const caseStudies = [
   { to: '/case-studies/design-system', label: 'Design System' },
@@ -7,32 +8,51 @@ const caseStudies = [
 
 export default function CaseStudyLayout() {
   return (
-    <div className="mx-auto flex w-full max-w-4xl gap-10 px-6 py-16">
-      <aside className="hidden w-48 shrink-0 md:block">
-        <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-gray-400">
-          Case Studies
-        </h2>
-        <nav className="flex flex-col gap-1">
-          {caseStudies.map(({ to, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              className={({ isActive }) =>
-                `rounded-md px-3 py-2 text-sm no-underline transition-colors ${
-                  isActive
-                    ? 'bg-gray-100 font-medium text-gray-900'
-                    : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
-                }`
-              }
-            >
-              {label}
-            </NavLink>
-          ))}
-        </nav>
-      </aside>
-      <div className="min-w-0 flex-1">
-        <Outlet />
+    <PageContainer>
+      <div className="grid gap-10 md:grid-cols-[12rem_minmax(0,1fr)] md:gap-14">
+        <aside className="case-nav hidden md:block">
+          <p className="case-nav__label">Case studies</p>
+          <ol className="case-nav__list">
+            {caseStudies.map(({ to, label }, i) => (
+              <li key={to}>
+                <NavLink
+                  to={to}
+                  className={({ isActive }) =>
+                    `case-nav__link${isActive ? ' is-active' : ''}`
+                  }
+                >
+                  <span className="case-nav__link-index">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="case-nav__link-title">{label}</span>
+                </NavLink>
+              </li>
+            ))}
+          </ol>
+        </aside>
+        <div className="min-w-0">
+          <nav
+            className="case-nav-mobile md:hidden"
+            aria-label="Case studies"
+          >
+            {caseStudies.map(({ to, label }, i) => (
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) =>
+                  `case-nav-mobile__link${isActive ? ' is-active' : ''}`
+                }
+              >
+                <span className="case-nav-mobile__index">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className="case-nav-mobile__title">{label}</span>
+              </NavLink>
+            ))}
+          </nav>
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </PageContainer>
   )
 }

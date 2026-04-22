@@ -13,7 +13,7 @@ import Contact from './pages/Contact'
 function App() {
   return (
     <BrowserRouter>
-      <div className="flex min-h-screen flex-col bg-white">
+      <div className="flex min-h-screen flex-col">
         <Header />
         <div className="flex-1">
           <Routes>

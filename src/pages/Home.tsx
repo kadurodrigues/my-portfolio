@@ -1,133 +1,134 @@
+import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import PageContainer from '../components/layout/PageContainer'
 
-const techStack = [
-  'JavaScript',
-  'TypeScript',
-  'Node.js',
-  'HTML',
-  'CSS',
-  'React',
-  'Next.js',
-  'Vue',
-  'Angular',
-  'Vite',
-  'Tailwind CSS',
-  'Sass',
-  'Material UI',
-  'Redux',
-  'Vuex',
-  'Pinia',
-  'RxJS',
-  'Vitest',
-  'Jest',
-  'Cypress',
-  'Playwright',
-  'Testing Library',
-  'Jenkins',
-  'GitHub Actions',
-  'SQL',
-  'PostgreSQL',
-  'MongoDB',
-  'REST API',
-  'Axios',
-  'AWS',
-  'Micro-frontend',
-]
+const heroPhoto = '/images/profile.png'
 
-const caseStudies = [
+type CaseStudy = {
+  eyebrow: string
+  title: string
+  meta: string
+  to: string
+}
+
+const caseStudies: CaseStudy[] = [
   {
-    eyebrow: 'design system',
-    title: 'Building a scalable component library across product teams',
+    eyebrow: 'Design system',
+    title: 'A scalable component library across product teams',
+    meta: '2021–24 · Citibank · Web components, tokens',
     to: '/case-studies/design-system',
   },
   {
-    eyebrow: 'micro-frontends',
-    title: 'Enabling autonomous teams with a federated frontend architecture',
+    eyebrow: 'Micro-frontends',
+    title: 'Enabling autonomous teams with a federated architecture',
+    meta: '2022–24 · Citibank · Module Federation, runtime',
     to: '/case-studies/micro-frontends',
   },
 ]
 
-const heroPhoto = '/images/profile.png'
+type StackGroup = {
+  label: string
+  items: string[]
+}
+
+const stackGroups: StackGroup[] = [
+  { label: 'Core', items: ['JavaScript', 'TypeScript', 'Node.js', 'HTML', 'CSS'] },
+  { label: 'Frameworks', items: ['React', 'Next.js', 'Vue', 'Angular', 'Vite', 'RxJS'] },
+  { label: 'Styling', items: ['Tailwind CSS', 'Sass', 'Material UI'] },
+  { label: 'State', items: ['Redux', 'Vuex', 'Pinia'] },
+  { label: 'Testing', items: ['Vitest', 'Jest', 'Cypress', 'Playwright', 'Testing Library'] },
+  { label: 'Data', items: ['SQL', 'PostgreSQL', 'MongoDB', 'REST', 'Axios'] },
+  { label: 'Infra', items: ['AWS', 'Jenkins', 'GitHub Actions', 'Micro-frontends'] },
+]
+
+const enterIndex = (i: number): CSSProperties => ({ ['--i' as string]: i } as CSSProperties)
 
 export default function Home() {
   return (
     <PageContainer>
-      <div className="page-stack">
-        <section className="grid items-center gap-10 md:grid-cols-[1.2fr_0.8fr] md:gap-12">
-          <div className="content-stack">
-            <p className="eyebrow">Hi,</p>
-            <h1 className="hero-title">
-              I&apos;m Carlos Rodrigues
-            </h1>
-            <p className="text-xl font-medium text-gray-500">
-              Senior Frontend Engineer building scalable UI systems.
+      <div className="editorial-stack">
+        <header className="home-hero">
+          <div className="home-hero__text">
+            <p className="meta-line home-hero__meta" data-enter style={enterIndex(0)}>
+              Dallas, TX · 2026
             </p>
-            <p className="lead-text">
-              I help teams build <span className="accent-text">scalable frontend products</span>, design systems,
-              and clean architecture that make shipping faster and collaboration easier. Over the last
-              14+ years, I&apos;ve done this across Brazil <span aria-hidden="true">🇧🇷</span>, Ireland <span aria-hidden="true">🇮🇪</span>, and the US <span aria-hidden="true">🇺🇸</span>.
+            <h1 className="display-xl" data-enter style={enterIndex(1)}>
+              Carlos Rodrigues.
+            </h1>
+            <p className="display-md display-italic" data-enter style={enterIndex(2)}>
+              Senior frontend engineer building{' '}
+              <span className="display-accent">scalable UI systems</span>.
+            </p>
+            <p className="lede" data-enter style={enterIndex(3)}>
+              For fourteen years &mdash; in São Paulo, Dublin, and Dallas &mdash; I&apos;ve
+              helped teams ship scalable frontend products, design systems, and clean
+              architecture that make collaboration easier.
             </p>
           </div>
-          <figure className="mx-auto w-full max-w-sm md:mx-0 md:justify-self-end">
+          <figure className="home-hero__figure" data-enter style={enterIndex(2)}>
             <img
               src={heroPhoto}
-              alt="Portrait of Carlos Rodrigues"
-              className="aspect-[2/3] w-full rounded-2xl object-cover object-top shadow-[0_20px_45px_-25px_rgba(17,24,39,0.45)]"
+              alt="Portrait of Carlos Rodrigues, Howth, Ireland, 2023"
+              className="home-hero__image"
               loading="eager"
             />
-            <figcaption className="mt-3 text-center text-xs text-gray-400 md:text-right">
-              Howth, Ireland
-            </figcaption>
+            <figcaption className="home-hero__caption">Howth · 2023</figcaption>
           </figure>
-        </section>
+        </header>
 
-        <section className="content-stack">
-          <h2 className="eyebrow">Work</h2>
-          <ul className="flex flex-col">
-            {caseStudies.map((item, index) => {
-              const isLast = index === caseStudies.length - 1
-              return (
-                <li key={item.to}>
-                  <Link
-                    to={item.to}
-                    className={`group flex items-baseline justify-between gap-6 border-t border-gray-200 py-6 no-underline transition-colors duration-200 hover:border-gray-300 ${
-                      isLast ? 'border-b' : ''
-                    }`}
-                  >
-                    <div className="flex flex-col gap-2">
-                      <span className="meta-text uppercase tracking-[0.1em]">
-                        {item.eyebrow}
-                      </span>
-                      <span className="section-title transition-colors duration-200 group-hover:text-[rgb(var(--color-accent))]">
-                        {item.title}
-                      </span>
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      className="inline-block shrink-0 text-xl text-gray-400 transition-all duration-200 group-hover:translate-x-1 group-hover:text-[rgb(var(--color-accent))]"
-                    >
-                      →
-                    </span>
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </section>
-
-        <section className="content-stack">
-          <h2 className="eyebrow">Tech Stack</h2>
-          <div className="flex flex-wrap gap-2">
-            {techStack.map((tech) => (
-              <span
-                key={tech}
-                className="rounded-full border border-gray-200 px-4 py-1.5 text-sm text-gray-700"
-              >
-                {tech}
-              </span>
+        <section aria-labelledby="work-heading">
+          <p
+            id="work-heading"
+            className="meta-line home-section-head"
+            data-enter
+            style={enterIndex(4)}
+          >
+            Selected work
+          </p>
+          <ol className="work-list" data-enter style={enterIndex(5)}>
+            {caseStudies.map((item, index) => (
+              <li key={item.to} className="work-item">
+                <Link to={item.to} className="work-link">
+                  <span className="work-index" aria-hidden="true">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="work-body">
+                    <span className="work-eyebrow">{item.eyebrow}</span>
+                    <span className="display-md work-title">{item.title}</span>
+                    <span className="work-meta">{item.meta}</span>
+                  </span>
+                  <span className="work-arrow" aria-hidden="true">
+                    →
+                  </span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ol>
+        </section>
+
+        <section aria-labelledby="stack-heading">
+          <p
+            id="stack-heading"
+            className="meta-line home-section-head"
+            data-enter
+            style={enterIndex(6)}
+          >
+            Stack
+          </p>
+          <dl className="kit" data-enter style={enterIndex(7)}>
+            {stackGroups.map((group) => (
+              <div key={group.label} className="kit-row">
+                <dt className="kit-label">{group.label}</dt>
+                <dd>
+                  <ul className="kit-items" aria-label={`${group.label}: ${group.items.join(', ')}`}>
+                    {group.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </dd>
+              </div>
+            ))}
+          </dl>
         </section>
       </div>
     </PageContainer>

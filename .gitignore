@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Local-only agent/workflow notes (not tracked in git)
+AGENTS.md
+.impeccable.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

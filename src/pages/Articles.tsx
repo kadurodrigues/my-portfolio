@@ -1,59 +1,102 @@
+import type { CSSProperties } from 'react'
 import PageContainer from '../components/layout/PageContainer'
 
-interface Article {
+type Article = {
+  eyebrow: string
   title: string
   description: string
   url: string
+  source: string
   date: string
 }
 
 const articles: Article[] = [
   {
-    title: 'Performance in Vue.js: Breaking Down Conditional Code ⚡️',
+    eyebrow: 'Performance · Vue.js',
+    title: 'Performance in Vue.js: Breaking down conditional code',
     description:
       'A practical performance-focused breakdown of conditional rendering patterns in Vue.js, with TypeScript-friendly ideas for cleaner and faster code.',
     url: 'https://dev.to/kaduln2/performance-in-vuejs-breaking-down-conditional-code-3emh',
-    date: 'Apr 18, 2025',
+    source: 'Dev.to',
+    date: 'April 2025',
   },
   {
-    title: 'Passing lots of props in Vue.js as a Pro 🧑🏼‍🚀',
+    eyebrow: 'Components · Vue.js',
+    title: 'Passing lots of props in Vue.js, as a pro',
     description:
       'A concise guide for structuring and passing larger prop sets in Vue.js while keeping components maintainable and readable.',
     url: 'https://dev.to/kaduln2/passing-lots-of-props-in-vuejs-as-a-pro-418k',
-    date: 'Mar 22, 2022',
+    source: 'Dev.to',
+    date: 'March 2022',
   },
 ]
+
+const enterIndex = (i: number): CSSProperties =>
+  ({ ['--i' as string]: i } as CSSProperties)
 
 export default function Articles() {
   return (
     <PageContainer>
-      <div className="page-stack">
-        <section className="content-stack">
-          <p className="eyebrow">Articles</p>
-          <h1 className="page-title !max-w-[24ch]">
-            Notes on <span className="accent-text">frontend architecture</span>, design systems, and lessons from building at scale.
+      <article className="editorial-stack">
+        <header className="about-hero">
+          <p className="meta-line" data-enter style={enterIndex(0)}>
+            Articles
+          </p>
+          <h1 className="display-xl" data-enter style={enterIndex(1)}>
+            Notes on <em className="display-accent">frontend architecture</em>,
+            design systems, and lessons from building at scale.
           </h1>
-          <p className="meta-text">Published on dev.to — a growing collection of technical writing.</p>
-        </section>
+          <p
+            className="display-md display-italic"
+            data-enter
+            style={enterIndex(2)}
+          >
+            Technical writing, published on dev.to.
+          </p>
+        </header>
 
-        <div className="content-stack">
-          {articles.map((article) => (
-            <a
-              key={article.title}
-              href={article.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block rounded-lg border border-gray-200 p-6 no-underline transition-colors hover:border-gray-300 hover:bg-gray-50"
-            >
-              <div className="meta-text">{article.date}</div>
-              <h2 className="entry-title mt-2">{article.title}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                {article.description}
-              </p>
-            </a>
-          ))}
-        </div>
-      </div>
+        <section aria-labelledby="articles-heading">
+          <p
+            id="articles-heading"
+            className="meta-line home-section-head"
+            data-enter
+            style={enterIndex(3)}
+          >
+            Selected writing
+          </p>
+          <ol className="work-list" data-enter style={enterIndex(4)}>
+            {articles.map((article, index) => (
+              <li key={article.url} className="work-item">
+                <a
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="work-link"
+                >
+                  <span className="work-index" aria-hidden="true">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="work-body">
+                    <span className="work-eyebrow">{article.eyebrow}</span>
+                    <span className="display-md work-title">
+                      {article.title}
+                    </span>
+                    <span className="work-description">
+                      {article.description}
+                    </span>
+                    <span className="work-meta">
+                      {article.source} · {article.date}
+                    </span>
+                  </span>
+                  <span className="work-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </article>
     </PageContainer>
   )
 }
