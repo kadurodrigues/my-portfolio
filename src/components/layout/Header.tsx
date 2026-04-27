@@ -17,11 +17,20 @@ export default function Header() {
     return storedTheme ? storedTheme === 'dark' : prefersDark
   })
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false)
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDarkMode)
     window.localStorage.setItem('theme', isDarkMode ? 'dark' : 'light')
   }, [isDarkMode])
+
+  useEffect(() => {
+    const updateHeaderSurface = () => setHasScrolled(window.scrollY > 8)
+
+    updateHeaderSurface()
+    window.addEventListener('scroll', updateHeaderSurface, { passive: true })
+    return () => window.removeEventListener('scroll', updateHeaderSurface)
+  }, [])
 
   useEffect(() => {
     if (!isMenuOpen) return
@@ -36,7 +45,7 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false)
 
   return (
-    <header className="site-header">
+    <header className="site-header" data-scrolled={hasScrolled}>
       <div className="site-header__inner">
         <Link to="/" onClick={closeMenu} className="site-logo" aria-label="Home">
           CR
