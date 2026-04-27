@@ -71,7 +71,7 @@ export default function Contact() {
           <p className="meta-line" data-enter style={enterIndex(0)}>
             Contact
           </p>
-          <h1 className="display-xl" data-enter style={enterIndex(1)}>
+          <h1 className="display-lg" data-enter style={enterIndex(1)}>
             Let&apos;s talk about frontend architecture, design systems, or{' '}
             <em className="display-accent">coffee in a new city</em>.
           </h1>

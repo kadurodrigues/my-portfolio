@@ -21,7 +21,7 @@ export default function CaseStudyHero({
       <p className="meta-line" data-enter style={enterIndex(0)}>
         Case study
       </p>
-      <h1 className="display-xl case-hero__title" data-enter style={enterIndex(1)}>
+      <h1 className="display-lg case-hero__title" data-enter style={enterIndex(1)}>
         {title}
       </h1>
       <p className="case-hero__standfirst" data-enter style={enterIndex(2)}>

@@ -338,6 +338,17 @@ body {
     text-wrap: balance;
   }
 
+  .display-lg {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(2.6rem, 5.5vw, 4.75rem);
+    line-height: 1;
+    letter-spacing: -0.022em;
+    color: var(--ink);
+    font-feature-settings: "kern", "liga", "calt";
+    text-wrap: balance;
+  }
+
   .display-md {
     font-family: var(--font-display);
     font-weight: 500;

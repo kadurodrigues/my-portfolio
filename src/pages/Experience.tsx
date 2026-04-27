@@ -81,7 +81,7 @@ export default function Experience() {
           <p className="meta-line" data-enter style={enterIndex(0)}>
             Experience
           </p>
-          <h1 className="display-xl" data-enter style={enterIndex(1)}>
+          <h1 className="display-lg" data-enter style={enterIndex(1)}>
             A <em className="display-accent">14+ year journey</em> across Brazil,
             Ireland, and the US building scalable frontend platforms.
           </h1>

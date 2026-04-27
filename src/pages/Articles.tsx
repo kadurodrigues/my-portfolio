@@ -42,7 +42,7 @@ export default function Articles() {
           <p className="meta-line" data-enter style={enterIndex(0)}>
             Articles
           </p>
-          <h1 className="display-xl" data-enter style={enterIndex(1)}>
+          <h1 className="display-lg" data-enter style={enterIndex(1)}>
             Notes on <em className="display-accent">frontend architecture</em>,
             design systems, and lessons from building at scale.
           </h1>

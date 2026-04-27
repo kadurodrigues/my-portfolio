@@ -108,7 +108,7 @@ export default function About() {
           <p className="meta-line" data-enter style={enterIndex(0)}>
             About
           </p>
-          <h1 className="display-xl about-hero__title" data-enter style={enterIndex(1)}>
+          <h1 className="display-lg about-hero__title" data-enter style={enterIndex(1)}>
             Frontend engineer <em className="display-accent">from Brazil</em>, building
             scalable UI systems from Dublin to Dallas.
           </h1>
