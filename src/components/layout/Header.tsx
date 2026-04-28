@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
+import type { CSSProperties } from 'react'
 import { useEffect, useState } from 'react'
 
 const navItems = [
@@ -9,6 +10,11 @@ const navItems = [
   { to: '/articles', label: 'Articles' },
   { to: '/contact', label: 'Contact' },
 ]
+
+const headerStyle = {
+  backdropFilter: 'var(--header-frost-filter)',
+  WebkitBackdropFilter: 'var(--header-frost-filter)',
+} satisfies CSSProperties
 
 export default function Header() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -45,7 +51,7 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false)
 
   return (
-    <header className="site-header" data-scrolled={hasScrolled}>
+    <header className="site-header" data-scrolled={hasScrolled} style={headerStyle}>
       <div className="site-header__inner">
         <Link to="/" onClick={closeMenu} className="site-logo" aria-label="Home">
           CR

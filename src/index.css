@@ -57,6 +57,7 @@
   --rule: oklch(0.91 0.005 250);
   --header-rest-bg: oklch(0.985 0.003 250 / 0.08);
   --header-frost-bg: oklch(0.985 0.003 250 / 0.56);
+  --header-frost-filter: blur(28px) saturate(1.22);
 
   /* Accent: Tailwind blue-600 — kept across both themes per project preference. */
   --ink-blue: rgb(37 99 235);
@@ -102,8 +103,6 @@ body {
     top: 0;
     z-index: 40;
     background: var(--header-frost-bg);
-    backdrop-filter: blur(28px) saturate(1.22);
-    -webkit-backdrop-filter: blur(28px) saturate(1.22);
     transition: box-shadow var(--dur-medium) var(--ease-out-quart);
   }
 
@@ -267,8 +266,8 @@ body {
     top: 100%;
     z-index: 1;
     background: color-mix(in oklch, var(--paper) 96%, transparent);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: var(--header-frost-filter);
+    -webkit-backdrop-filter: var(--header-frost-filter);
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
   }
