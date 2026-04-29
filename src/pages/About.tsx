@@ -113,7 +113,7 @@ export default function About() {
             scalable UI systems from Dublin to Dallas.
           </h1>
           <p className="display-md display-italic" data-enter style={enterIndex(2)}>
-            14+ years across three countries &mdash; and counting.
+            10+ years across three countries &mdash; and counting.
           </p>
           <div className="prose-editorial" data-enter style={enterIndex(3)}>
             <p>

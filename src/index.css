@@ -784,7 +784,7 @@ body {
   }
 
   .prose-editorial ul li::before {
-    content: "\2014";
+    content: "-";
     position: absolute;
     left: 0;
     top: 0;
@@ -1185,7 +1185,7 @@ body {
   }
 
   .role__highlights li::before {
-    content: "\2014"; /* em-dash */
+    content: "-";
     position: absolute;
     left: 0;
     top: 0;
