@@ -14,14 +14,12 @@ const chapters: Chapter[] = [
     body: (
       <>
         <p>
-          I started my career in <strong>Brazil</strong> as a web developer at a digital
-          agency, where I was first exposed to the world of frontend development. Early on,
-          I was deeply focused on crafting pixel-perfect interfaces using HTML, CSS, and
-          jQuery. That foundation helped me develop strong attention to detail and a solid
-          understanding of how users interact with interfaces. Over time, I expanded into
-          JavaScript frameworks like AngularJS, Ionic, and PhoneGap &mdash; building
-          hybrid applications and gaining experience with more complex frontend
-          architectures.
+          I started in <strong>S&atilde;o Paulo</strong> at a digital agency, mostly
+          building marketing sites in HTML, CSS, and jQuery, and later hybrid mobile apps
+          with AngularJS, Ionic, and PhoneGap. The work was unglamorous &mdash; making
+          things behave the same way across Safari, IE9, and a half-dozen Android
+          browsers &mdash; but it&apos;s where I learned to actually look at an interface
+          instead of just shipping it.
         </p>
       </>
     ),
@@ -32,31 +30,22 @@ const chapters: Chapter[] = [
     body: (
       <>
         <p>
-          In 2017, I made a decision that would shape both my career and personal growth:
-          I moved to <strong>Ireland</strong> to improve my English and develop my
-          communication skills. What started as a language goal quickly turned into a
-          professional opportunity when I joined <strong>Equifax</strong> as a Software
-          Developer. Working in a multicultural environment pushed me to adapt quickly;
-          this became my real &ldquo;English class&rdquo;, where I learned how to
-          communicate effectively, collaborate across cultures, and operate in a global
-          engineering environment.
+          In 2017 I moved to <strong>Dublin</strong> to improve my English. I expected a
+          year of language school and a working-holiday job; I stayed eight, joined{' '}
+          <strong>Equifax</strong> as a Software Developer within months, and discovered
+          that the real English class was a standup with engineers from five different
+          countries trying to agree on what &ldquo;done&rdquo; meant.
         </p>
         <p>
-          In 2020, I joined <strong>Citibank</strong> as a <strong>UI Tech Lead</strong>,
-          marking my first experience leading a frontend team. In this role, I worked
-          closely with developers, product managers, and UX teams to build internal
-          platforms such as a <strong>Workflow Designer</strong> for automating business
-          processes and a <strong>Task Inbox</strong> for managing operational workflows.
-          Alongside these applications, I led the development of a{' '}
-          <strong>UI Design System</strong> that became the foundation for consistency,
-          scalability, and reuse across our products.
-        </p>
-        <p>
-          This experience strengthened not only my technical skills in frontend
-          architecture and system design but also my ability to lead, mentor, and
-          collaborate effectively within a team. It reinforced the importance of building
-          solutions that are not just technically sound, but also maintainable and aligned
-          with real business needs.
+          In 2020 I joined <strong>Citibank</strong> as a{' '}
+          <strong>UI Tech Lead</strong>. It was the first time I was responsible for
+          what a frontend team shipped rather than my own piece of it. Over the next four
+          years we built the <strong>Workflow Designer</strong> and{' '}
+          <strong>Task Inbox</strong>, two internal SaaS products used by around five
+          thousand people across the bank to model and run business processes, and the
+          shared <strong>design system</strong> the rest of the portfolio eventually ran
+          on. The design system is the work I&apos;m most proud of from Dublin; the rest
+          of it is where I learned how to lead.
         </p>
       </>
     ),
@@ -67,31 +56,29 @@ const chapters: Chapter[] = [
     body: (
       <>
         <p>
-          In 2024, I took another major step in my journey by leaving{' '}
-          <strong>Ireland</strong> after being approved for the <strong>EB2-NIW</strong>{' '}
-          visa &mdash; a U.S. green card category for professionals whose work is
-          considered to have national-interest impact. In early 2025, I moved to the{' '}
-          <strong>United States</strong> and started a new chapter of my career in{' '}
-          <strong>Dallas, Texas</strong>.
+          In 2024 I left Dublin after being approved for the{' '}
+          <strong>EB2-NIW</strong> visa, a U.S. green card track for people whose work
+          is judged to be in the national interest. In early 2025 I moved to{' '}
+          <strong>Dallas, Texas</strong> &mdash; still at Citibank, now on the U.S. side
+          of the same product family.
         </p>
         <p>
-          Today, I bring together strong frontend expertise with a global perspective
-          &mdash; combining technical depth, adaptability, and a product-oriented mindset
-          to build scalable systems and contribute effectively to diverse teams.
+          Three countries, three working cultures, and the same job underneath all of
+          them: making big frontend systems feel small to the people using them.
         </p>
       </>
     ),
   },
   {
     index: '04',
-    title: 'Beyond code',
+    title: 'Outside work',
     body: (
       <>
         <p>
-          When I am not building interfaces, you will usually find me exploring new
-          cities, learning from different cultures, and diving into good technical
-          writing. I am always chasing the next challenge that helps me grow as an
-          engineer and as a person.
+          When I&apos;m not in front of an editor, I&apos;m usually walking around a city
+          I haven&apos;t seen before, reading something longer than a blog post, or
+          trying to cook a dish from one of the three countries I&apos;ve lived in. Most
+          of what makes me a better engineer happens away from the keyboard.
         </p>
       </>
     ),
@@ -113,13 +100,14 @@ export default function About() {
             scalable UI systems from Dublin to Dallas.
           </h1>
           <p className="display-md display-italic" data-enter style={enterIndex(2)}>
-            10+ years across three countries &mdash; and counting.
+            Fourteen years of frontend work. Three countries. One job description.
           </p>
           <div className="prose-editorial" data-enter style={enterIndex(3)}>
             <p>
-              I&apos;m a frontend engineer specialising in scalable UI applications and
-              design systems, with experience working across <strong>Brazil</strong>,{' '}
-              <strong>Ireland</strong>, and the <strong>United States</strong>.
+              I work on scalable UI applications and design systems, mostly inside large
+              engineering organisations. The career has run through{' '}
+              <strong>Brazil</strong>, <strong>Ireland</strong>, and the{' '}
+              <strong>United States</strong>, in that order.
             </p>
           </div>
         </header>

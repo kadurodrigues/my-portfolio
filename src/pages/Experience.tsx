@@ -12,46 +12,46 @@ type Role = {
 
 const roles: Role[] = [
   {
-    title: 'Frontend Engineer',
+    title: 'Senior Frontend Engineer',
     company: 'Citibank',
     location: 'Dallas, TX',
     period: '2025 — Present',
     current: true,
     highlights: [
-      'Contribute to the redesign of Accounts Master Central (AMC), a global Citibank application serving as the central repository for entity data utilized by numerous downstream systems worldwide.',
-      'Re-architect a legacy .NET desktop application into a modern Angular 18 web application, leveraging advanced framework features such as signals, computed values, and standalone components to elevate performance, usability, and maintainability.',
-      'Implement automated CI/CD pipelines with LightSpeed to streamline testing, continuous deployment, and delivery processes across development environments.',
-      'Collaborate with multiple cross-functional teams, spanning four development squads, to ensure seamless integration, consistent data handling, and adherence to enterprise standards.',
-      'Successfully convert over 80% of the legacy .NET codebase into modern Angular components using TypeScript, enhancing scalability and front-end maintainability.',
-      'Introduce a modular micro-frontend architecture by partitioning large modules into standalone UI projects, enabling on-demand integration of specific functionalities as dependencies.'
+      'Working on the redesign of Accounts Master Central (AMC) — Citibank’s record of legal-entity data, consumed by hundreds of downstream systems across the bank.',
+      'Migrating a legacy .NET desktop client into an Angular 18 web app. Signals, standalone components, and a much smaller mental model for the team.',
+      'Personally converted over 80% of the legacy .NET codebase into TypeScript and Angular components so far.',
+      'Splitting the heavier modules into separately-built UI packages so other Citi apps can consume only the parts they need, rather than embedding the whole thing.',
+      'Set up the CI/CD on Citi’s internal LightSpeed pipelines for the new app.',
+      'Working across four squads to keep contracts and data shapes consistent as each team migrates its slice.',
     ],
   },
   {
-    title: 'Frontend Engineer',
+    title: 'UI Tech Lead',
     company: 'Citibank',
     location: 'Dublin, Ireland',
     period: '2020 — 2025',
     highlights: [
-      'Led the development of the Workflow Designer and Task Inbox applications, SaaS products built initially with Vue 2 and later migrated to Vue 3, empowering over 5,000 users to automate business processes through workflow design and management.',
-      'Engineered a Custom UI Design System using Vue.js, TypeScript, and Tailwind CSS, ensuring a cohesive visual identity across the Workflow Designer and Task Inbox, thereby accelerating development cycles and enhancing user experience.',
-      'Architected front-end applications and a custom design system, managing multiple Vue-based micro-frontends and ensuring consistent integration through the definition of scalable component structures, enforcement of coding standards, and promotion of cross-team reusability.',
-      'Established CI/CD pipelines within Jenkins, automating the build, configuration, and deployment of UI applications to the internal cloud platform on a weekly basis, guaranteeing reliable and efficient releases.',
-      'Mentored junior and mid-level engineers, providing guidance on best practices, code architecture, and project management, thereby fostering a culture of knowledge sharing and professional growth within the development team.',
-      'Contributed to backend development initiatives using Java and Spring Boot to build and maintain APIs, facilitating efficient data processing and seamless front-end and back-end communication.',
-      'Accelerated Citibank’s decision-making velocity by 30% through the implementation of streamlined workflows via the Workflow Designer and Task Inbox, minimizing manual approvals and expediting task completion.',
-      'Ensured superior project quality by conducting consistent code reviews, championing clean code principles, and enforcing coding standards across all teams.',
+      'Led the frontend for two internal SaaS products — Workflow Designer and Task Inbox — used by roughly 5,000 people across the bank to model and run business processes. Started on Vue 2, finished on Vue 3.',
+      'Built the shared design system both apps were assembled from. Vue, TypeScript, Tailwind, design tokens, Storybook for docs.',
+      'Set up the micro-frontend boundaries between the two products and the surrounding internal tools, and wrote the conventions that kept three teams shipping into the same UI without stepping on each other.',
+      'Owned the Jenkins pipelines for the UI apps. Weekly release cadence onto the bank’s internal cloud, with one rollback in five years (and I still think about it).',
+      'Mentored a handful of junior and mid-level frontend engineers. Pairing, design reviews, the bit before code review where you can actually still change shape.',
+      'Wrote some of the Spring Boot endpoints the frontends called when no one else had time, mostly to keep the contract honest.',
+      'Internal measurements credited the platform with cutting time-to-decision on the workflows it ran by roughly 30%. The metric the bank cared about; I’m slightly suspicious of how it was measured, but the orders of magnitude were real.',
+      'Ran code review for the UI group and held the line on what we’d accept into the design system.',
     ],
   },
   {
-    title: 'Software Engineer',
+    title: 'Senior Software Engineer',
     company: 'Equifax Credit Bureau',
     location: 'Dublin, Ireland',
     period: '2017 — 2020',
     highlights: [
-      'Developed pivotal features for the myEquifax platform utilizing Angular 8, enabling millions of users to seamlessly access credit reports and manage credit freezes.',
-      'Participated in a cross-functional squad to deliver secure, intuitive user experiences for credit management, thereby enhancing users financial control.',
-      'Drove a 20% increase in user engagement by optimizing the platforms UI/UX, improving accessibility, and implementing responsive design principles.',
-      'Earned 2nd place in the Equifax Global Hackathon for developing a cutting-edge credit management solution using Angular and TypeScript.',
+      'Worked on the myEquifax consumer portal in Angular 8 — credit reports, freezes, and the customer-facing flows millions of US users hit each month.',
+      'Shipped from a small cross-functional squad: designers, BE, FE, QA, all sitting in the same Slack channel.',
+      'A round of accessibility and mobile-layout work landed a measured 20% bump in engagement on the screens we touched.',
+      'Placed second in the Equifax global hackathon for a credit-management prototype.',
     ],
   },
   {
@@ -60,10 +60,9 @@ const roles: Role[] = [
     location: 'São Paulo, Brazil',
     period: '2015 — 2017',
     highlights: [
-      'Designed and implemented the new Banco ABC Brasil Internet Banking platform using React.js and Redux, enhancing user experience and accessibility for thousands of customers.',
-      'Developed a hybrid mobile banking solution with React Native, which led to a notable increase in mobile transactions and customer adoption rates.',
-      'Constructed a React Native application for tracking collaborator hours, enabling real-time reporting and synchronized updates with internal systems.',
-      'Successfully launched the Banco ABC Brasil App, achieving widespread customer adoption and a subsequent rise in mobile transactions.',
+      'Rebuilt the Banco ABC Brasil internet banking front end on React and Redux.',
+      'Shipped the bank’s first React Native mobile app — same product, much smaller team than the original web build.',
+      'Built an internal React Native app for tracking consultant hours, synced against the back-office system.',
     ],
   },
   {
@@ -72,9 +71,9 @@ const roles: Role[] = [
     location: 'São Paulo, Brazil',
     period: '2012 — 2014',
     highlights: [
-      'Delivered the “Além da Beleza” portal for Allergan Pharmaceutical Products, increasing brand visibility and audience engagement.',
-      'Designed landing pages for pharmaceutical clients, improving internal communications and employee satisfaction.',
-      'Worked with WordPress, HTML, CSS, Bootstrap, JavaScript, and jQuery to deliver marketing and communication experiences.',
+      'Built the “Além da Beleza” consumer portal for Allergan.',
+      'Designed and shipped landing pages and small internal microsites for a handful of pharma clients.',
+      'Stack: WordPress, HTML, CSS, Bootstrap, JavaScript, jQuery. The era of getting things to render.',
     ],
   },
 ]
@@ -90,11 +89,11 @@ export default function Experience() {
             Experience
           </p>
           <h1 className="display-lg" data-enter style={enterIndex(1)}>
-            A <em className="display-accent">10+ year journey</em> across Brazil,
-            Ireland, and the US building scalable frontend platforms.
+            <em className="display-accent">Fourteen years</em> of frontend, across Brazil,
+            Ireland, and the United States.
           </h1>
           <p className="display-md display-italic" data-enter style={enterIndex(2)}>
-            Currently a Frontend Engineer at Citibank &mdash; Dallas, TX.
+            Currently a Senior Frontend Engineer at Citibank &mdash; Dallas, TX.
           </p>
         </header>
 

@@ -8,10 +8,10 @@ export default function DesignSystem() {
         title="Design System"
         description={
           <>
-            Building a{' '}
-            <em className="display-accent">scalable component library</em> to drive
-            UI consistency, reduce duplication, and accelerate development across
-            multiple product teams.
+            A{' '}
+            <em className="display-accent">shared component library</em> so four product
+            teams could stop reinventing the same buttons, modals, and form fields in
+            slightly different ways.
           </>
         }
         role="Senior Frontend Engineer"
@@ -20,82 +20,66 @@ export default function DesignSystem() {
 
       <CaseStudySection index={1} title="Overview">
         <p>
-          As the product portfolio grew, teams were building the same UI patterns
-          independently &mdash; buttons, modals, form fields &mdash; each with
-          slight visual and behavioral differences. There was no shared language
-          between design and engineering, leading to inconsistent user experiences
-          and duplicated effort.
+          As the product portfolio grew, every team was building the same things
+          independently: buttons, modals, form fields, each one a little different and
+          all of them subtly wrong in their own way. Design and engineering didn&apos;t
+          have a shared vocabulary, so we kept relitigating the same decisions.
         </p>
         <p>
-          I led the creation of a design system that unified these patterns into a
-          single, versioned component library used across all product teams.
+          I led the work to pull these patterns into a single, versioned component
+          library that every product would consume.
         </p>
       </CaseStudySection>
 
       <CaseStudySection index={2} title="Problem">
-        <p>
-          Multiple teams were shipping features with their own component
-          implementations. This resulted in:
-        </p>
+        <p>Concretely:</p>
         <ul>
-          <li>Visual inconsistencies across products.</li>
-          <li>Duplicated development effort for common UI elements.</li>
-          <li>No standardized design tokens (colors, spacing, typography).</li>
-          <li>Difficulty onboarding new developers due to lack of shared conventions.</li>
-          <li>Increasing maintenance burden as the codebase grew.</li>
+          <li>Three different button components, none of them quite the same.</li>
+          <li>Color, spacing, and type values hard-coded in every product.</li>
+          <li>No shared conventions for new engineers to learn from.</li>
+          <li>Every visual fix had to be done in four places.</li>
+          <li>Designers were redrawing the same primitives in every Figma file.</li>
         </ul>
       </CaseStudySection>
 
       <CaseStudySection index={3} title="Approach">
         <p>
-          Rather than building the entire system upfront, I took an incremental
-          approach &mdash; auditing existing patterns, identifying the most reused
-          components, and extracting them into a shared library.
+          Instead of designing the whole system on paper first, I worked backwards from
+          what already existed: audit the products, pull out the components that were
+          being reimplemented most often, and extract those into a shared library.
         </p>
         <ul>
-          <li>Conducted a UI audit across all products to identify common patterns.</li>
+          <li>Audited the existing UI across all four products.</li>
           <li>Defined design tokens for spacing, color, and typography.</li>
-          <li>Built foundational components (Button, Input, Modal, Card, Badge).</li>
-          <li>Documented every component in Storybook with usage examples.</li>
-          <li>Created contribution guidelines so teams could extend the system.</li>
+          <li>Started with the foundational components: Button, Input, Modal, Card, Badge.</li>
+          <li>Documented every component in Storybook, with usage examples and the &ldquo;don&apos;t do this&rdquo; cases too.</li>
+          <li>Wrote contribution guidelines so teams could extend the system instead of forking it.</li>
         </ul>
       </CaseStudySection>
 
       <CaseStudySection index={4} title="Challenges">
         <p>
-          The technical work was only part of the effort. Adoption was the real
-          challenge.
+          The technical work was the easy part. Adoption was where the real work was.
         </p>
         <ul>
-          <li>Resistance from teams who had already built their own components.</li>
-          <li>
-            Complex enterprise requirements that demanded flexibility without
-            sacrificing consistency.
-          </li>
-          <li>
-            Third-party integrations that didn&apos;t align with the design
-            system&apos;s patterns.
-          </li>
-          <li>
-            Balancing strictness (enforcing standards) with flexibility
-            (supporting edge cases).
-          </li>
+          <li>Teams that had already built their own components didn&apos;t want to throw them away.</li>
+          <li>Some enterprise screens needed escape hatches the library wasn&apos;t built for.</li>
+          <li>Third-party widgets (date pickers, charts) refused to honour the tokens.</li>
+          <li>Holding the line between &ldquo;strict enough to be useful&rdquo; and &ldquo;flexible enough to actually ship the edge cases&rdquo;.</li>
         </ul>
       </CaseStudySection>
 
       <CaseStudySection index={5} title="Solution">
         <p>
-          The design system was built as a standalone Vue.js component library,
-          published as an internal npm package with semantic versioning. Key
-          decisions included:
+          The library shipped as a standalone Vue package, published to the internal
+          npm registry with semver. A few decisions ended up mattering more than the
+          rest:
         </p>
         <ul>
-          <li>Token-based theming so products could customize without forking.</li>
-          <li>Slot-based component APIs for maximum composability.</li>
-          <li>Automated visual regression testing to catch unintended changes.</li>
-          <li>
-            A migration guide and pairing sessions to drive adoption across teams.
-          </li>
+          <li>Token-based theming, so products could customise without forking the components.</li>
+          <li>Slot-based component APIs &mdash; composition over configuration.</li>
+          <li>Automated visual regression testing in CI so visual drift didn&apos;t sneak in.</li>
+          <li>A written migration guide, and pairing sessions with each adopting team.</li>
         </ul>
       </CaseStudySection>
 
@@ -103,21 +87,21 @@ export default function DesignSystem() {
 
       <CaseStudySection index={6} title="Impact">
         <ul>
-          <li>Unified UI across 4+ product teams.</li>
-          <li>Reduced component duplication by ~60%.</li>
-          <li>Cut new-feature development time by shipping pre-built patterns.</li>
-          <li>Improved onboarding &mdash; new devs were productive within days.</li>
-          <li>Established a shared design-engineering language.</li>
+          <li>One UI language across four product teams.</li>
+          <li>Component duplication dropped by around 60% in the first year.</li>
+          <li>New feature work could start from existing patterns instead of designing primitives again.</li>
+          <li>New frontend hires were shipping their first PRs in days rather than weeks.</li>
+          <li>Design and engineering started using the same words for the same things.</li>
         </ul>
       </CaseStudySection>
 
       <CaseStudySection index={7} title="Key learnings">
         <ul>
-          <li>A design system is a product &mdash; it needs advocacy, docs, and support.</li>
-          <li>Adoption is harder than building &mdash; invest in migration paths.</li>
-          <li>Start small, ship early, iterate based on real usage.</li>
-          <li>Tokens are the foundation &mdash; get them right first.</li>
-          <li>Cross-team collaboration is essential from day one.</li>
+          <li>A design system is a product. If you treat it as a library, no one adopts it.</li>
+          <li>Adoption is harder than building. Budget for migration support before you budget for new components.</li>
+          <li>Tokens first. If the primitives are wrong, every component built on them is wrong.</li>
+          <li>The most useful artefact is the &ldquo;don&apos;t do this&rdquo; section of the docs.</li>
+          <li>Ship one component all the way before you start the second one.</li>
         </ul>
       </CaseStudySection>
     </article>
